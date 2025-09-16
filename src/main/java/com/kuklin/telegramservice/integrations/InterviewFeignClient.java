@@ -62,6 +62,9 @@ public interface InterviewFeignClient {
     );
 
     @GetMapping("/api/v1/vacancy/{vacancyId}")
-    public VacancyDto getVacancyById(@PathVariable Long vacancyId);
+    VacancyDto getVacancyById(@PathVariable Long vacancyId);
+
+    @PutMapping("/api/v1/userinfo/{userId}/job-title")
+    Boolean setJobTitle(@PathVariable Long userId, @RequestBody String jobTitle);
 
 }
